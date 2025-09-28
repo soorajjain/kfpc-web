@@ -12,7 +12,7 @@ const HeroBanner = () => (
     >
       <h1 className="text-4xl md:text-5xl font-bold mb-6">Empowering Farmers. Driving Climate Action.</h1>
       <p className="text-lg md:text-2xl mb-8">Partnering with farmers and organizations to build sustainable agriculture through ARR, Plantation, and Biochar projects.</p>
-      <a href="#projects" className="inline-block bg-[#ccd00a] text-green-900 font-semibold px-5 py-3 rounded-xl shadow hover:bg-[#ccd00a] transition">Explore Our Projects</a>
+      <a href="/projects" className="inline-block bg-[#ccd00a] text-green-900 font-semibold px-5 py-3 rounded-xl shadow hover:bg-[#ccd00a] transition">Explore Our Projects</a>
     </motion.div>
   </section>
 );

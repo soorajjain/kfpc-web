@@ -4,7 +4,7 @@ import logo from "./assets/Images/logo.png";
 
 const ErrorPage = () => (
   <motion.div
-    className="flex flex-col items-center justify-center min-h-[60vh] text-center p-8 relative"
+    className="flex flex-col items-center justify-center min-h-[60vh] text-center p-8 relative pt-36"
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 40 }}

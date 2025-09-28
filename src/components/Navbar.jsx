@@ -39,8 +39,9 @@ const Navbar = () => {
           ${(!isHome || (isHome && scrolled)) ? "bg-gradient-to-r from-green-700/70 via-green-600/70 to-green-800/70 shadow-lg" : "bg-transparent"}
           ${scrolled ? "backdrop-blur-md" : ""}`}
       >
-        <div className="flex items-center justify-around py-3 px-4 md:px-12">
-          <div className="flex items-center justify-center cursor-pointer w-full" onClick={() => {
+        <div className="flex flex-row items-center justify-between py-3 px-4 md:px-12 max-w-7xl mx-auto">
+          {/* Logo and Title */}
+          <div className="flex items-center cursor-pointer" onClick={() => {
             navigate('/');
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}>
@@ -58,8 +59,8 @@ const Navbar = () => {
                 ></div>
                 <div>
                   {!scrolled ? (
-                    <span className="font-bold text-xl md:text-2xl leading-tight text-white">
-                      Kommanalu<br /> <span className="text-sm md:text-lg leading-tight text-white"> Farmers Producer Company </span>
+                    <span className="font-bold text-base md:text-xl leading-tight text-white">
+                      Kommanalu<br /> <span className="text-sm md:text-md leading-tight text-white"> Farmers Producer Co. </span>
                     </span>
                   ) : (
                     <span className="font-bold text-base md:text-lg text-white">
@@ -84,9 +85,9 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Nav links */}
-          <div className={`flex-col md:flex-row md:flex justify-center items-center w-full  gap-3 ${menuOpen ? "flex  " : "hidden md:flex"} w-full mb-4 md:my-0`}>
-            <ul className="flex flex-col md:flex-row gap-4 md:gap-1 w-full md:w-auto mt-6 md:mt-0">
+          {/* Nav links for desktop */}
+          <div className={`hidden md:flex w-auto flex-row items-center gap-3 mt-0`}>
+            <ul className="flex flex-row gap-1 w-auto">
               {navItems.map((item) => (
                 <li key={item.to}>
                   <Link
@@ -100,7 +101,7 @@ const Navbar = () => {
             </ul>
             <motion.a
               href="contact"
-              className="inline-block border text-[#ccd00a] font-semibold px-4 py-2 hover:bg-[#ccd00a] hover:text-green-900  transition rounded-xl mt-2 md:mt-0 text-sm md:text-base "
+              className="inline-block border text-[#ccd00a] font-semibold px-4 py-2 hover:bg-[#ccd00a] hover:text-green-900  transition rounded-xl mt-0 text-sm md:text-base "
               whileHover={{ scale: 1.08, boxShadow: "0 8px 32px rgba(234,179,8,0.2)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -109,6 +110,58 @@ const Navbar = () => {
             </motion.a>
           </div>
         </div>
+
+        {/* Mobile menu and backdrop */}
+        <AnimatePresence>
+          {menuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                key="backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black z-40"
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu backdrop"
+              />
+              {/* Mobile menu */}
+              <motion.div
+                key="mobile-menu"
+                initial={{ y: -40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -40, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-full left-0 w-full bg-gradient-to-r shadow-lg z-50 flex flex-col px-4 py-6 backdrop-blur-md"
+              >
+                <ul className="flex flex-col gap-4 w-full justify-center items-center">
+                  {navItems.map((item) => (
+                    <li key={item.to}>
+                      <Link
+                        to={item.to}
+                        className={`cursor-pointer px-4 py-2 rounded-xl font-semibold transition-all text-base text-white hover:bg-green-900`}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <motion.a
+                  href="contact"
+                  className="inline-block border text-[#ccd00a] font-semibold px-4 py-2 hover:bg-[#ccd00a] hover:text-green-900 transition rounded-xl mt-4 text-base w-fit mx-auto"
+                  whileHover={{ scale: 1.08, boxShadow: "0 8px 32px rgba(234,179,8,0.2)" }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Partner With Us
+                </motion.a>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </motion.nav>
     </AnimatePresence>
   );

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ProjectsFull from './pages/ProjectsFull';
 import FarmersCornerFull from './pages/FarmersCornerFull';
 import NewsFull from './pages/NewsFull';
@@ -34,20 +36,23 @@ function HomePage() {
 }
 function App() {
   const location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
   return (
     <div className="font-sans bg-gray-50 min-h-screen">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route element={<Layout />}>  
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutFull />} />
-          <Route path="/projects" element={<ProjectsFull />} />
-          <Route path="/farmers" element={<FarmersCornerFull />} />
-          <Route path="/partners" element={<PartnersFull />} />
-          <Route path="/news" element={<NewsFull />} />
-          <Route path="/gallery" element={<GalleryFull />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutFull />} />
+            <Route path="/projects" element={<ProjectsFull />} />
+            <Route path="/farmers" element={<FarmersCornerFull />} />
+            <Route path="/partners" element={<PartnersFull />} />
+            <Route path="/news" element={<NewsFull />} />
+            <Route path="/gallery" element={<GalleryFull />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </AnimatePresence>

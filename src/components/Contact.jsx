@@ -5,7 +5,7 @@ import partners1 from "../assets/Images/contact1.png";
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-yellow-50 to-white py-16 px-4">
+    <section id="contact" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-yellow-50 to-white px-4 pt-32">
       <div className="max-w-5xl w-full flex flex-col md:flex-row bg-white/80 rounded-3xl shadow-2xl overflow-hidden">
         {/* Left Side: Image */}
         <div className="md:w-1/2 w-full flex items-center justify-center p-0 relative">
