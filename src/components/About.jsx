@@ -26,7 +26,7 @@ const About = () => (
         </p>
       </div>
       <motion.a
-        href="#about-details"
+        href="/kfpc-web/about"
         className="inline-block bg-green-700 text-white font-semibold px-8 py-3 rounded-full shadow hover:bg-green-800 transition"
         whileHover={{ scale: 1.08, boxShadow: "0 8px 32px rgba(34,197,94,0.2)" }}
         whileTap={{ scale: 0.95 }}

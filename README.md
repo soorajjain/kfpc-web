@@ -47,7 +47,7 @@ npm run preview
 	```
 2. In `src/main.jsx`, set:
 	```jsx
-	<BrowserRouter basename="/kfpc-web">
+	<BrowserRouter basename="/kfpc-web/">
 	```
 3. Build the project:
 	```bash
