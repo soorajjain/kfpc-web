@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { motion } from "framer-motion";
 import partners1 from "../assets/Images/contact1.png";
 
@@ -14,24 +14,65 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    if (!name || !email || !message) {
-      toast.error("Fill out all the fields !!");
-      return; // Add return here to stop further execution
-    } else {
-      emailjs
-        .sendForm("service_w1pyj8j", "template_l4yt7ei", form.current, {
-          publicKey: "Ybo-Sqa62Z2VFoeZ4",
-        })
-        .then(
-          () => {
-            toast.success("Email sent successfully!");
-          },
-          (error) => {
-            toast.error("Failed to send email. Please try again.");
-            console.log("FAILED...", error);
-          }
-        );
+
+    // Trim spaces for clean validation
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+
+    // Regex for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validate Name
+    if (!trimmedName) {
+      toast.error("Please enter your name!");
+      return;
     }
+    if (trimmedName.length < 3) {
+      toast.error("Name must be at least 3 characters long!");
+      return;
+    }
+
+    // Validate Email
+    if (!trimmedEmail) {
+      toast.error("Please enter your email!");
+      return;
+    }
+    if (!emailRegex.test(trimmedEmail)) {
+      toast.error("Please enter a valid email address!");
+      return;
+    }
+
+    // Validate Message
+    if (!trimmedMessage) {
+      toast.error("Please enter your message!");
+      return;
+    }
+    if (trimmedMessage.length < 10) {
+      toast.error("Message must be at least 10 characters long!");
+      return;
+    }
+
+    console.log("All validations passed.");
+    console.log("form.current", form.current);
+
+    // All validations passed, send email
+    emailjs
+      .sendForm("service_09we5r8", "template_g606hrl", form.current, {
+        publicKey: "RrENybCVoBYkECRGl",
+      })
+      .then(
+        () => {
+          toast.success("Email sent successfully!");
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          toast.error("Failed to send email. Please try again.");
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -62,7 +103,7 @@ const Contact = () => {
           >
             <input
               type="text"
-              name="user_name"
+              name="name"
               placeholder="Your Name"
               className="w-full px-4 py-2 rounded border border-green-300 focus:outline-none focus:border-green-500 bg-white"
               required
@@ -97,19 +138,19 @@ const Contact = () => {
           <div className="mt-6 text-center text-gray-600 text-sm">
             Or email us at{" "}
             <a
-              href="mailto:info@kommanalufpc.org"
+              href="mailto:Kommanalufpo@gmail.com"
               className="text-green-700 font-semibold underline"
             >
-              info@kommanalufpc.org
+              Kommanalufpo@gmail.com
             </a>
           </div>
           <div className="mt-4 text-center text-gray-500 text-xs">
             <div>Kommanalu Farmer Producer Company Ltd.</div>
-            <div>📍 Kommanalu, Shivamogga, Karnataka, India</div>
-            <div>📞 +91-XXXXXXXXXX</div>
+            <div>📍 Kommanalu, Shivamogga</div>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

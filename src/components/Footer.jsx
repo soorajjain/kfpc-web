@@ -70,7 +70,7 @@ const Footer = () => (
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/chethan-k-g-791830163/"
             className="hover:text-yellow-400 transition"
             aria-label="LinkedIn"
           >
