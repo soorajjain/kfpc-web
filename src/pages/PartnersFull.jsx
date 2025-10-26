@@ -14,7 +14,7 @@ const PartnersFull = () => (
       <ul className="list-disc ml-6 mb-8">
         <li>Climate-focused companies (Varaha Climate AG)</li>
         <li>NGOs and cooperatives driving rural sustainability</li>
-        <li>Exporters & retailers for sustainable sourcing</li>
+        {/* <li>Exporters & retailers for sustainable sourcing</li> */}
       </ul>
       <p className="mb-8 text-lg text-center">Join us in scaling farmer prosperity and climate resilience.</p>
       <div className="flex justify-center gap-8">

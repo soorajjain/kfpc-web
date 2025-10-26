@@ -12,7 +12,7 @@ const projectData = [
     icon: "🌱",
     color: "from-green-200 via-green-100 to-white",
     points: [
-      "Land degradation and low carbon income for farmers.",
+      "Land regeneration and carbon income for farmers.",
       "Farmers with plantations after 2020 are eligible for 20 years of carbon credits.",
       "Progress: 3,018 acres completed; goal: 5,000 acres by Dec 2025.",
       "Impact: More carbon captured, richer biodiversity, and climate resilience."

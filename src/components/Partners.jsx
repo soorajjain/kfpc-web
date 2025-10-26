@@ -21,13 +21,6 @@ const collaborations = [
     image: partners2,
     color: "bg-yellow-100 border-yellow-300",
   },
-  {
-    icon: "🛒",
-    title: "Exporters & Retailers",
-    details: ["Sustainable sourcing"],
-    image: partners3,
-    color: "bg-blue-100 border-blue-300",
-  },
 ];
 
 const Partners = () => (
@@ -50,7 +43,7 @@ const Partners = () => (
           Collaborating with industry leaders to drive sustainable impact and innovation
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 mx-6 md:mx-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 mx-6 md:mx-0">
         {collaborations.map((col, idx) => (
           <motion.div
             key={col.title}
