@@ -133,7 +133,7 @@ const Navbar = () => {
               ))}
             </ul>
             <motion.a
-              href="/kfpc-web/contact"
+              href="contact"
               className="inline-block border text-[#ccd00a] font-semibold px-4 py-2 hover:bg-[#ccd00a] hover:text-green-900  transition rounded-xl mt-0 text-sm md:text-base "
               whileHover={{
                 scale: 1.08,
@@ -185,7 +185,7 @@ const Navbar = () => {
                   ))}
                 </ul>
                 <motion.a
-                  href="/kfpc-web/contact"
+                  href="contact"
                   className="inline-block border text-[#ccd00a] font-semibold px-4 py-2 hover:bg-[#ccd00a] hover:text-green-900 transition rounded-xl mt-4 text-base w-fit mx-auto"
                   whileHover={{
                     scale: 1.08,

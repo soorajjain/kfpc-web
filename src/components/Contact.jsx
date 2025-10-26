@@ -10,7 +10,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  console.log(name, email, message);
+  // console.log(name, email, message);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -53,8 +53,8 @@ const Contact = () => {
       return;
     }
 
-    console.log("All validations passed.");
-    console.log("form.current", form.current);
+    // console.log("All validations passed.");
+    // console.log("form.current", form.current);
 
     // All validations passed, send email
     emailjs
