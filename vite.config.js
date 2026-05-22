@@ -6,7 +6,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/kfpc-web/",
+  base: "/",
   resolve: {
     alias: {
       '@layout': path.resolve(__dirname, 'src/layout.js'),
