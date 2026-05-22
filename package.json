@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://soorajjain.github.io/kfpc-web/",
+  "homepage": "https://soorajjain.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

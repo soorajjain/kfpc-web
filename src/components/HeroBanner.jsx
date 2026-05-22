@@ -21,7 +21,7 @@ const HeroBanner = () => (
         agriculture through ARR, Plantation, and Biochar projects.
       </p>
       <a
-        href="/kfpc-web/projects"
+        href="/projects"
         className="inline-block bg-[#ccd00a] text-green-900 font-semibold px-5 py-3 rounded-xl shadow hover:bg-[#ccd00a] transition"
       >
         Explore Our Projects

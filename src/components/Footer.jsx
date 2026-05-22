@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/Images/logo-crop.png";
@@ -32,24 +31,15 @@ const Footer = () => (
             Home
           </a>
           <span className="text-gray-400">|</span>
-          <a
-            href="/kfpc-web/about"
-            className="hover:text-yellow-400 transition"
-          >
+          <a href="/about" className="hover:text-yellow-400 transition">
             About
           </a>
           <span className="text-gray-400">|</span>
-          <a
-            href="/kfpc-web/projects"
-            className="hover:text-yellow-400 transition"
-          >
+          <a href="/projects" className="hover:text-yellow-400 transition">
             Projects
           </a>
           <span className="text-gray-400">|</span>
-          <a
-            href="/kfpc-web/contact"
-            className="hover:text-yellow-400 transition"
-          >
+          <a href="/contact" className="hover:text-yellow-400 transition">
             Contact
           </a>
         </div>
